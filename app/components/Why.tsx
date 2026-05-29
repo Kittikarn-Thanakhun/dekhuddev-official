@@ -1,3 +1,6 @@
+'use client'
+
+import { motion } from "framer-motion"
 import React from 'react'
 import {
   FaWallet,
@@ -11,7 +14,14 @@ import {
 
 function Why() {
   return (
-    <div id='Why' className='scroll-mt-32 border-t border-black/10 mt-20 text-center py-20 bg-[#f5f5f5]'>
+    <motion.div
+      id='Why'
+      className='scroll-mt-32 border-t border-black/10 mt-20 text-center py-20 bg-[#f5f5f5]'
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
 
       <div className='container mx-auto max-w-[1320px]'>
 
@@ -142,7 +152,7 @@ function Why() {
 
             </div>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

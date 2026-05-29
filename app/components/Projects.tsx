@@ -1,8 +1,19 @@
+'use client'
+
+import { motion } from "framer-motion"
+
 import React from 'react'
 
 function Projects() {
   return (
-    <div id='Projects' className='scroll-mt-32 border-t border-black/10'>
+    <motion.div
+    id='Projects'
+    className='scroll-mt-32 border-t border-black/10'
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    viewport={{ once: true }}
+    >
         <div className=' mt-20 mx-5 md:mx-0'>
             <div className='container mx-auto max-w-[1320px]'>
                 <div>
@@ -54,7 +65,7 @@ function Projects() {
                 </div>
             </div>
         </div> 
-    </div>
+    </motion.div>
     
   )
 }

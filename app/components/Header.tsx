@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { 
   FaInstagram, 
@@ -5,11 +7,16 @@ import {
   FaGithub,
   FaLine 
 } from "react-icons/fa";
+import { motion } from "framer-motion"
 
 
 function Header() {
   return (
-    <div>
+    <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1, ease: "easeOut" }}
+    >
         <div id='Header' className='container mx-auto max-w-[1320px] pt-[60px] md:pt-[110px]'>
             <div className='flex mt-[1.5rem] p-10 flex-col md:flex-row md:p-0 justify-between'>
                 <div><h1 className='text-[6rem] md:text-[8rem] md:ml-5'>D  E  K <br /> H  U  D <br />D  E  V</h1></div>
@@ -37,7 +44,7 @@ function Header() {
                         <a 
                             className='w-12 h-12 rounded-full border border-black/20
                             flex items-center justify-center
-                            text-2xl -black
+                            text-2xl text-black
                             hover:bg-black hover:text-white
                             transition-all duration-300'
                             href="https://www.instagram.com/dekhuddev_official/"
@@ -100,7 +107,7 @@ function Header() {
                 </div>
             </div>
         </div>
-    </div>
+    </motion.div>
   )
 }
 
