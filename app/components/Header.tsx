@@ -12,7 +12,7 @@ function Header() {
     <div>
         <div id='Header' className='container mx-auto max-w-[1320px] pt-[60px] md:pt-[110px]'>
             <div className='flex mt-[1.5rem] p-10 flex-col md:flex-row md:p-0 justify-between'>
-                <div><h1 className='text-[8rem] md:ml-5'>D  E  K <br /> H  U  D <br />D  E  V</h1></div>
+                <div><h1 className='text-[6rem] md:text-[8rem] md:ml-5'>D  E  K <br /> H  U  D <br />D  E  V</h1></div>
                 
 
                 <div className='flex flex-col justify-end items-center my-5 md:my-0'>
