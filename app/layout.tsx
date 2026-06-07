@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
 import { Oswald, Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Header from "./components/Header";
-import Why from "./components/Why";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-
-<html lang="en" className="scroll-smooth"></html>
+import { LanguageProvider } from "./context/LanguageContext";
+import Navbar        from "./components/Navbar";
+import Header        from "./components/Header";
+import Why           from "./components/Why";
+import TechStack     from "./components/TechStack";
+import Projects      from "./components/Projects";
+import Pricing       from "./components/Pricing";
+import FAQ           from "./components/FAQ";
+import Contact       from "./components/Contact";
+import Reviews       from "./components/Reviews";
+import Footer        from "./components/Footer";
+import BackToTop     from "./components/BackToTop";
+import LoadingScreen from "./components/LoadingScreen";
 
 const thai = Noto_Sans_Thai({
   subsets: ["latin", "thai"],
@@ -31,15 +36,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="th">
+    <html lang="th" className="scroll-smooth">
       <body className={thai.className}>
-        <Navbar />
-        <Header />
-        <Why />
-        <Projects />
-        <Contact />
-        <Footer />
-        {children}
+        <LanguageProvider>
+          <LoadingScreen />
+          <Navbar />
+          <Header />
+          <Why />
+          <TechStack />
+          <Projects />
+          <Pricing />
+          <FAQ />
+          <Contact />
+          <Reviews />
+          <Footer />
+          <BackToTop />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
