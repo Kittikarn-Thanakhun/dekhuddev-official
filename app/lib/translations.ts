@@ -59,7 +59,7 @@ const t = {
       items: [
         { q: 'How long does it take to build a website?',     a: 'A simple 1-page site takes 3–5 days, a multi-page portfolio 7–14 days, and a fully custom project can take 14–30 days. Timelines are agreed before starting.' },
         { q: 'How many revision rounds are included?',        a: 'Starter includes 1 round, Standard 3 rounds, and Custom unlimited revisions. Additional revisions beyond the plan can be arranged separately.' },
-        { q: 'Do you provide web hosting?',                   a: "Hosting isn't included, but I can recommend and help set up hosting (e.g. Vercel, Netlify). I'll guide you through the entire deployment process." },
+        { q: 'Do you provide web hosting?',                   a: "We do not offer hosting services. You will need to arrange your own hosting separately." },
         { q: 'What do I need to provide before starting?',   a: 'Content (text, images, brand colours, logo), reference sites you like, and a clear idea of the features you need. More detail = faster start.' },
         { q: 'Can you update the website after delivery?',   a: 'Yes. Small edits are usually free for a short period after delivery. Larger features are quoted separately.' },
         { q: 'What technologies do you use?',                 a: 'Primarily Next.js, React, TypeScript, and Tailwind CSS with Framer Motion for animations.' },
@@ -173,7 +173,7 @@ const t = {
       items: [
         { q: 'ทำเว็บไซต์ใช้เวลานานแค่ไหน?',   a: 'เว็บ 1 หน้าใช้เวลา 3–5 วัน พอร์ตโฟลิโอหลายหน้า 7–14 วัน และโปรเจกต์ custom อาจใช้เวลา 14–30 วัน' },
         { q: 'แก้ไขได้กี่ครั้ง?',               a: 'Starter แก้ได้ 1 ครั้ง Standard 3 ครั้ง และ Custom ไม่จำกัด การแก้ไขเพิ่มเติมสามารถตกลงกันได้' },
-        { q: 'มีบริการ hosting ด้วยไหม?',        a: 'ค่า hosting ไม่รวมในแพ็กเกจ แต่สามารถแนะนำและช่วยตั้งค่าได้ เช่น Vercel หรือ Netlify พร้อมแนะนำขั้นตอน deploy ทั้งหมด' },
+        { q: 'มีบริการ hosting ด้วยไหม?',        a: 'เราไม่มีบริการ hosting ลูกค้าต้องจัดหา hosting เองแยกต่างหาก' },
         { q: 'ต้องเตรียมอะไรก่อนเริ่มงาน?',    a: 'ต้องการเนื้อหา (ข้อความ รูปภาพ สีแบรนด์ โลโก้) เว็บอ้างอิง และฟีเจอร์ที่ต้องการ ยิ่งละเอียดยิ่งเริ่มงานได้เร็ว' },
         { q: 'หลังส่งงานแล้วแก้ไขได้ไหม?',     a: 'ได้ การแก้ไขเล็กน้อยมักไม่คิดเพิ่มในช่วงสั้นๆ หลังส่งงาน ส่วนฟีเจอร์ใหม่จะคิดราคาแยกตามขอบเขตงาน' },
         { q: 'ใช้เทคโนโลยีอะไรในการพัฒนา?',   a: 'หลักๆ ใช้ Next.js, React, TypeScript และ Tailwind CSS พร้อม Framer Motion สำหรับแอนิเมชัน' },
