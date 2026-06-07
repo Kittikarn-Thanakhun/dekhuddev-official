@@ -37,7 +37,7 @@ const t = {
       cta: 'Get Started',
       plans: [
         {
-          name: 'Starter', price: '฿200 – ฿500',
+          name: 'Starter', price: '฿500 – ฿700',
           desc: 'Perfect for a simple personal page or landing page.', days: '3 – 5 days',
           features: ['1-page website', 'Responsive design', 'Basic animations', '1 round of revisions', 'Source code included'],
         },
@@ -67,7 +67,7 @@ const t = {
     },
     contact: {
       label: 'Contact',
-      heading: 'Starting from ฿200 – ฿3,000',
+      heading: 'Starting from ฿500 – ฿3,000',
       desc: 'Price varies depending on complexity. Feel free to reach out and discuss the details.',
     },
     reviews: {
@@ -151,7 +151,7 @@ const t = {
       cta: 'เริ่มต้นเลย',
       plans: [
         {
-          name: 'Starter', price: '฿200 – ฿500',
+          name: 'Starter', price: '฿500 – ฿700',
           desc: 'เหมาะสำหรับหน้าเว็บส่วนตัวหรือ landing page เรียบง่าย', days: '3 – 5 วัน',
           features: ['เว็บ 1 หน้า', 'รองรับทุกขนาดหน้าจอ', 'แอนิเมชันพื้นฐาน', 'แก้ไขได้ 1 ครั้ง', 'รับ source code'],
         },
@@ -181,7 +181,7 @@ const t = {
     },
     contact: {
       label: 'ติดต่อ',
-      heading: 'เริ่มต้นที่ ฿200 – ฿3,000',
+      heading: 'เริ่มต้นที่ ฿500 – ฿3,000',
       desc: 'ราคาขึ้นอยู่กับความยากง่ายของงาน สามารถพูดคุยรายละเอียดเพิ่มเติมได้ครับ',
     },
     reviews: {
