@@ -81,6 +81,21 @@ export default function AuthModal({ mode, onClose, onSwitch, onSuccess }: AuthMo
         <h2 className='text-2xl font-bold mb-1'>{mode === 'login' ? tx.signIn : tx.createAccount}</h2>
         <p className='text-sm text-black/40 mb-6'>{mode === 'login' ? tx.welcome : tx.join}</p>
 
+        <button
+          onClick={handleGoogle}
+          disabled={loading}
+          className='w-full flex items-center justify-center gap-3 border border-black/15 py-3 text-sm font-medium hover:bg-zinc-50 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed mb-5'
+        >
+          <FcGoogle size={18} />
+          {tx.googleBtn}
+        </button>
+
+        <div className='flex items-center gap-3 mb-5'>
+          <div className='flex-1 h-px bg-black/10' />
+          <span className='text-xs text-black/30 uppercase tracking-widest'>{tx.orDivider}</span>
+          <div className='flex-1 h-px bg-black/10' />
+        </div>
+
         <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
           {mode === 'register' && (
             <div className='flex flex-col gap-1'>
@@ -109,21 +124,6 @@ export default function AuthModal({ mode, onClose, onSwitch, onSuccess }: AuthMo
             {mode === 'login' ? tx.submitSignIn : tx.submitRegister}
           </button>
         </form>
-
-        <div className='flex items-center gap-3 my-5'>
-          <div className='flex-1 h-px bg-black/10' />
-          <span className='text-xs text-black/30 uppercase tracking-widest'>{tx.orDivider}</span>
-          <div className='flex-1 h-px bg-black/10' />
-        </div>
-
-        <button
-          onClick={handleGoogle}
-          disabled={loading}
-          className='w-full flex items-center justify-center gap-3 border border-black/15 py-3 text-sm font-medium hover:bg-zinc-50 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed'
-        >
-          <FcGoogle size={18} />
-          {tx.googleBtn}
-        </button>
 
         <p className='text-sm text-center text-black/40 mt-5'>
           {mode === 'login' ? tx.noAccount : tx.hasAccount}
