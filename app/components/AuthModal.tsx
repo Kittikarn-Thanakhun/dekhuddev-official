@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { FaTimes } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc'
 import { signInWithPopup } from 'firebase/auth'
-import { auth, googleProvider } from '../lib/firebase'
+import { getFirebase } from '../lib/firebase'
 import { useLanguage } from '../context/LanguageContext'
 import tr from '../lib/translations'
 
@@ -53,6 +53,7 @@ export default function AuthModal({ mode, onClose, onSwitch, onSuccess }: AuthMo
     setError('')
     setLoading(true)
     try {
+      const { auth, googleProvider } = getFirebase()
       const result = await signInWithPopup(auth, googleProvider)
       const user = {
         name:  result.user.displayName || 'User',
