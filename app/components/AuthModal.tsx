@@ -2,6 +2,9 @@
 
 import { useState } from 'react'
 import { FaTimes } from 'react-icons/fa'
+import { FcGoogle } from 'react-icons/fc'
+import { signInWithPopup } from 'firebase/auth'
+import { auth, googleProvider } from '../lib/firebase'
 import { useLanguage } from '../context/LanguageContext'
 import tr from '../lib/translations'
 
@@ -16,8 +19,9 @@ export default function AuthModal({ mode, onClose, onSwitch, onSuccess }: AuthMo
   const { lang } = useLanguage()
   const tx = tr[lang].auth
 
-  const [form,  setForm]  = useState({ name: '', email: '', password: '', confirm: '' })
-  const [error, setError] = useState('')
+  const [form,    setForm]    = useState({ name: '', email: '', password: '', confirm: '' })
+  const [error,   setError]   = useState('')
+  const [loading, setLoading] = useState(false)
 
   const set = (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
     setError('')
@@ -42,6 +46,24 @@ export default function AuthModal({ mode, onClose, onSwitch, onSuccess }: AuthMo
       const user = { name: match.name, email: match.email }
       localStorage.setItem('dhd_current', JSON.stringify(user))
       onSuccess(user)
+    }
+  }
+
+  const handleGoogle = async () => {
+    setError('')
+    setLoading(true)
+    try {
+      const result = await signInWithPopup(auth, googleProvider)
+      const user = {
+        name:  result.user.displayName || 'User',
+        email: result.user.email       || '',
+      }
+      localStorage.setItem('dhd_current', JSON.stringify(user))
+      onSuccess(user)
+    } catch {
+      setError(tx.errGoogle)
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -87,6 +109,21 @@ export default function AuthModal({ mode, onClose, onSwitch, onSuccess }: AuthMo
             {mode === 'login' ? tx.submitSignIn : tx.submitRegister}
           </button>
         </form>
+
+        <div className='flex items-center gap-3 my-5'>
+          <div className='flex-1 h-px bg-black/10' />
+          <span className='text-xs text-black/30 uppercase tracking-widest'>{tx.orDivider}</span>
+          <div className='flex-1 h-px bg-black/10' />
+        </div>
+
+        <button
+          onClick={handleGoogle}
+          disabled={loading}
+          className='w-full flex items-center justify-center gap-3 border border-black/15 py-3 text-sm font-medium hover:bg-zinc-50 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed'
+        >
+          <FcGoogle size={18} />
+          {tx.googleBtn}
+        </button>
 
         <p className='text-sm text-center text-black/40 mt-5'>
           {mode === 'login' ? tx.noAccount : tx.hasAccount}

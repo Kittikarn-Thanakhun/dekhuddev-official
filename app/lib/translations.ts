@@ -110,6 +110,9 @@ const t = {
       errMatch: 'Passwords do not match.',
       errUsed: 'This email is already in use.',
       errInvalid: 'Incorrect email or password.',
+      errGoogle: 'Google sign-in failed. Please try again.',
+      googleBtn: 'Continue with Google',
+      orDivider: 'or',
     },
   },
 
@@ -224,6 +227,9 @@ const t = {
       errMatch: 'รหัสผ่านไม่ตรงกัน',
       errUsed: 'อีเมลนี้ถูกใช้งานแล้ว',
       errInvalid: 'อีเมลหรือรหัสผ่านไม่ถูกต้อง',
+      errGoogle: 'เข้าสู่ระบบด้วย Google ล้มเหลว กรุณาลองใหม่',
+      googleBtn: 'ดำเนินการต่อด้วย Google',
+      orDivider: 'หรือ',
     },
   },
 } as const
