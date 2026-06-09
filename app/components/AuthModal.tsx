@@ -72,7 +72,7 @@ export default function AuthModal({ mode, onClose, onSwitch, onSuccess }: AuthMo
   return (
     <div className='fixed inset-0 z-200 flex items-center justify-center px-4' style={{ animation: 'overlay-in 0.2s ease-out both' }}>
       <div className='absolute inset-0 bg-black/40 backdrop-blur-sm' onClick={onClose} />
-      <div className='relative bg-white w-full max-w-105 p-8 shadow-2xl' style={{ animation: 'modal-up 0.25s ease-out both' }}>
+      <div className='relative bg-white w-full max-w-105 p-8 shadow-2xl max-h-[90vh] overflow-y-auto' style={{ animation: 'modal-up 0.25s ease-out both' }}>
 
         <button onClick={onClose} className='absolute top-4 right-4 text-black/30 hover:text-black transition-colors' aria-label='Close'>
           <FaTimes size={14} />
